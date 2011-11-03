@@ -1,5 +1,11 @@
+# revision 23092
+# category TLCore
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-hyphen-interlingua
-Version:	20111102
+Version:	20111103
 Release:	1
 Summary:	Interlingua hyphenation patterns
 Group:		Publishing
@@ -46,6 +52,7 @@ Hyphenation patterns for Interlingua in ASCII encoding.
 %_texmf_language_dat_d/hyphen-interlingua
 %_texmf_language_def_d/hyphen-interlingua
 %_texmf_language_lua_d/hyphen-interlingua
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -54,6 +61,8 @@ Hyphenation patterns for Interlingua in ASCII encoding.
 %build
 
 %install
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-interlingua <<EOF
 %% from hyphen-interlingua:
