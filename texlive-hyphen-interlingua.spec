@@ -44,12 +44,12 @@ Hyphenation patterns for Interlingua in ASCII encoding.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-interlingua <<EOF
-%% from hyphen-interlingua:
+\%\% from hyphen-interlingua:
 interlingua loadhyph-ia.tex
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-interlingua <<EOF
-%% from hyphen-interlingua:
+\%\% from hyphen-interlingua:
 \addlanguage{interlingua}{loadhyph-ia.tex}{}{2}{2}
 EOF
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
