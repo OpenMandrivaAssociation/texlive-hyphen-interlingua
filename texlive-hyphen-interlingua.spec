@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-interlingua
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	Interlingua hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -44,14 +44,16 @@ Hyphenation patterns for Interlingua in ASCII encoding.
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-interlingua <<EOF
-\%\% from hyphen-interlingua:
+\%% from hyphen-interlingua:
 interlingua loadhyph-ia.tex
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-interlingua
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-interlingua <<EOF
-\%\% from hyphen-interlingua:
+\%% from hyphen-interlingua:
 \addlanguage{interlingua}{loadhyph-ia.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-interlingua
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-interlingua <<EOF
 -- from hyphen-interlingua:
