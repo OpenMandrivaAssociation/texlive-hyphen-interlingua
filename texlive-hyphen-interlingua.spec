@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-interlingua
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	Interlingua hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -31,6 +31,8 @@ Hyphenation patterns for Interlingua in ASCII encoding.
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
 %_texmf_language_dat_d/hyphen-interlingua
 %_texmf_language_def_d/hyphen-interlingua
 %_texmf_language_lua_d/hyphen-interlingua
@@ -42,6 +44,9 @@ Hyphenation patterns for Interlingua in ASCII encoding.
 %build
 
 %install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
+
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-interlingua <<EOF
 \%% from hyphen-interlingua:
