@@ -1,6 +1,6 @@
 Name:		texlive-hyphen-interlingua
-Version:	58609
-Release:	2
+Version:	73410
+Release:	1
 Summary:	Interlingua hyphenation patterns
 Group:		Publishing
 URL:		https://tug.org/texlive
